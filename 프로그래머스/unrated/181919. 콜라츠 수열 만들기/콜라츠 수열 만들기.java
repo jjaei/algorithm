@@ -20,10 +20,8 @@ class Solution {
                 num = (3 * num) + 1;
             }
         }
-        int[] answer = new int[list.size()];
-        for (int j = 0; j < answer.length; j++) {
-            answer[j] = list.get(j);
-        }
+        int[] answer = list.stream().mapToInt(Integer::intValue).toArray();
+
         return answer;
     }
 }
