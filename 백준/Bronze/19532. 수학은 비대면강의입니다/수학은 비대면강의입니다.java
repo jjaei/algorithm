@@ -10,15 +10,8 @@ public class Main {
         int e = sc.nextInt();
         int f = sc.nextInt();
 
-        int x = 0, y = 0;
-        for (int i = -999; i <= 999; i++) {
-            for (int j = -999; j <= 999; j++) {
-                if ((a * i + b * j == c) && (d * i + e * j == f)) {
-                    x = i;
-                    y = j;
-                }
-            }
-        }
+        int x = (c * e - b * f) / (a * e - b * d);
+        int y = (a * f - c * d) / (a * e - b * d);
         System.out.println(x + " " + y);
     }
 }
