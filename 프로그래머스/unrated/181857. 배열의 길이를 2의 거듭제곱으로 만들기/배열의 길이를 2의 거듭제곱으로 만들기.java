@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class Solution {
     public int[] solution(int[] arr) {
         int arrLength = arr.length;
@@ -9,13 +6,13 @@ class Solution {
             length *= 2;
         }
         int[] answer = new int[length];
-        List<Integer> list = new ArrayList<>();
-        for (int num : arr) {
-            list.add(num);
+        for (int i = 0; i < answer.length; i++) {
+            if (i < arr.length) {
+                answer[i] = arr[i];
+            } else {
+                answer[i] = 0;
+            }
         }
-        for (int i = 0; i < length - arr.length; i++) {
-            list.add(0);
-        }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        return answer;
     }
 }
