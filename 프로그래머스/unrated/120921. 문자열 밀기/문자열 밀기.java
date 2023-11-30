@@ -2,7 +2,6 @@ class Solution {
     public int solution(String A, String B) {
         int answer = 0;
         String C = A;
-        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < A.length(); i++) {
             if(C.equals(B)) return answer;
 
