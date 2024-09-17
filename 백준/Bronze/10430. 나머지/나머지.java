@@ -1,26 +1,14 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int A = Integer.valueOf(st.nextToken());
-        int B = Integer.valueOf(st.nextToken());
-        int C = Integer.valueOf(st.nextToken());
-
-        bw.write((A + B) % C + "\n");
-        bw.write(((A % C) + (B % C)) % C + "\n");
-        bw.write((A * B) % C + "\n");
-        bw.write(((A % C) * (B % C)) % C+ "\n");
-
-        br.close();
-        bw.flush();
-        bw.close();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        System.out.println((a + b) % c);
+        System.out.println(((a % c) + (b % c)) % c);
+        System.out.println((a * b) % c);
+        System.out.println(((a % c) * (b % c)) % c);
     }
 }
