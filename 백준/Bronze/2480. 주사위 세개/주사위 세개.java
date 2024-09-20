@@ -1,28 +1,23 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int money = 0;
+        int[] dice = {a, b, c};
+        Arrays.sort(dice);
 
-		Scanner sc = new Scanner(System.in);
-		
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int c = sc.nextInt();
-		int money = 0;
-		
-		if(a==b && a==c && b==c) {
-			money=10000+(a*1000);
-			System.out.println(money);
-		} else if(a==b || a==c) {
-			money=1000+(a*100);
-			System.out.println(money);
-		} else if(b==c ) {
-			money=1000+(b*100);
-			System.out.println(money);
-		} else{
-			System.out.println((Math.max(a, Math.max(b,c))*100));
-		}
-  }
+        if (a == b && b == c) {
+            money = 10000 + (dice[0] * 1000);
+        } else if (a != b && b != c && a != c) {
+            money = dice[2] * 100;
+        } else {
+            money = 1000 + (dice[1] * 100);
+        }
+        System.out.println(money);
+    }
 }
-
