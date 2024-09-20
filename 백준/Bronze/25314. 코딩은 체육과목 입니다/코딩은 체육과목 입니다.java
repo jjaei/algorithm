@@ -1,26 +1,15 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int n = Integer.valueOf(br.readLine());
-
-        for (int i = 1; i <= n; i++) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
             if (i % 4 == 0) {
-                bw.write("long ");
-            }
-            if(i==n){
-                bw.write("int");
+                sb.append("long ");
             }
         }
-
-        br.close();
-        bw.flush();
-        bw.close();
+        System.out.println(sb.append("int"));
     }
 }
