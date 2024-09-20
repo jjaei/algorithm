@@ -1,19 +1,14 @@
-import java.io.*;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int n = Integer.valueOf(br.readLine());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         String star = "";
 
         for (int i = 0; i < n; i++) {
             star += "*";
-            bw.write(star + "\n");
+            System.out.println(star);
         }
-        br.close();
-        bw.flush();
-        bw.close();
     }
 }
