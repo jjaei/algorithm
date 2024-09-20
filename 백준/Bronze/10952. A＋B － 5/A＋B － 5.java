@@ -1,25 +1,15 @@
-import java.io.*;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        while(true) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-
-            int a = Integer.valueOf(st.nextToken());
-            int b = Integer.valueOf(st.nextToken());
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
             if (a == 0 && b == 0) {
                 break;
-            } else {
-                bw.write(a + b + "\n");
             }
+            System.out.println(a + b);
         }
-        br.close();
-        bw.flush();
-        bw.close();
     }
 }
