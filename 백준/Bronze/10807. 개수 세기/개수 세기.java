@@ -1,25 +1,22 @@
-import java.io.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] array = new int[n];
-        int count = 0;
-
-        for (int i = 0; i < n; i++) {
-            array[i] = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            int num = sc.nextInt();
+            arr[i] = num;
         }
-
         int v = sc.nextInt();
 
-        for (int j = 0; j < array.length; j++) {
-            if (array[j] == v) {
-                count += 1;
+        int answer = 0;
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] == v) {
+                answer++;
             }
         }
-        System.out.println(count);
+        System.out.println(answer);
     }
 }
