@@ -1,24 +1,18 @@
-import java.io.*;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] array = new int[9];
-        int max = 0;
-        int location = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = Integer.valueOf(br.readLine());
-        }
-
-        for (int j = 0; j < array.length; j++) {
-            if (array[j] > max) {
-                max = array[j];
-                location = j+1;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int max = Integer.MIN_VALUE;
+        int index = 0;
+        for (int i = 0; i < 9; i++) {
+            int num = sc.nextInt();
+            if (num > max) {
+                max = num;
+                index = i + 1;
             }
         }
         System.out.println(max);
-        System.out.println(location);
+        System.out.println(index);
     }
 }
