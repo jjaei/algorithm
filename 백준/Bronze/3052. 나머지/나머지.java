@@ -1,22 +1,14 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        HashSet<Integer> set = new HashSet<>();
-        // HashSet은 중복을 허용하지 않음.
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashSet<Integer> hash = new HashSet<>();
         for (int i = 0; i < 10; i++) {
-            int num = Integer.valueOf(br.readLine());
-            int nums = num % 42;
-            set.add(nums);
+            int num = sc.nextInt();
+            hash.add(num % 42);
         }
-
-        System.out.println(set.size()); // 중복을 허용하지 않기 때문에 set의 현재 size를 출력함.
-        br.close();
+        System.out.println(hash.size());
     }
 }
