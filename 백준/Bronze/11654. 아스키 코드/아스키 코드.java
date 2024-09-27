@@ -1,13 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		int ch = sc.next().charAt(0);
-		System.out.print(ch);
-		
-	}
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println(s.charAt(0) - 0);
+    }
 }
