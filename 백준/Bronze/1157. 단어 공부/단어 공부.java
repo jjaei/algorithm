@@ -1,27 +1,27 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next().toUpperCase(); // 문자열을 대문자로 변환
-        int[] arr = new int[26];
-
-        sc.close();
-
+        String str = sc.next().toUpperCase();
+        HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
-            arr[str.charAt(i)-65] += 1;
+            int count = map.getOrDefault(str.charAt(i), 0);
+            map.put(str.charAt(i), count + 1);
         }
 
+        List<Character> list = new ArrayList<>();
         int max = 0;
-        char c = '?';
-        for (int j = 0; j < arr.length; j++) {
-            if (arr[j] > max) {
-                max = arr[j];
-                c =(char)(j + 65);
-            } else if (arr[j] == max) {
-                c = '?';
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (max < entry.getValue()) {
+                max = entry.getValue();
             }
         }
-        System.out.print(c);
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == max) {
+                list.add(entry.getKey());
+            }
+        }
+        System.out.println(list.size() > 1 ? '?' : list.get(0));
     }
 }
